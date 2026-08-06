@@ -19,7 +19,7 @@ public class Perfil {
 
     @Column(name = "nome",length = 25, nullable = false, unique = true)
     /*ele auto nomeia com o nome do atributo*/
-    private String name;
+    private String nome;
 
     @OneToMany(mappedBy = "perfil") //nome do atributo da classe Usuario
     private List<Usuario> usuarios;
