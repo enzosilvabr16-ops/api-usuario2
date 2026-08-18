@@ -1,0 +1,29 @@
+server:
+    port: 8082
+
+spring:
+
+  application:
+    name: api-usuarios
+
+  datasource:
+    url: jdbc:mysql://localhost:3307/db-usuarios?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=America/Sao_Paulo
+    username: root
+    password: coti
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
+
+jwt:
+  secretkey: 960df114-3f73-4057-a6a0-986140db215e
+  expiration: 3600000
+
+cors:
+  enable: http://localhost:4200

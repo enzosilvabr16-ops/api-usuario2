@@ -1,0 +1,133 @@
+<div>
+
+  <h2>Sistema de controle de produtos</h2>
+  <p>Preencha o formulário para incluir um produto: {{produtos.length}}</p>
+
+  <form [formGroup]="produto" (ngSubmit)="cadastrarProduto()">
+
+    <!-- exibir as mensagens de sucesso ou de erro -->
+    @if(mensagemSucesso()) {
+    <div class="msgSucesso">
+      {{ mensagemSucesso() }}
+    </div>
+    }
+    @else if(mensagemErro()) {
+    <div class="msgErro">
+      {{ mensagemErro() }}
+    </div>
+    }
+
+    <div>
+      <label>Nome do produto:</label>
+      <input formControlName="nome" type="text" placeholder="Digite o nome aqui" />
+    </div>
+
+    <div>
+      <label>Preço do produto:</label>
+      <input formControlName="preco" type="text" placeholder="Digite o preço aqui" />
+    </div>
+
+    <div>
+      <label>Quantidade:</label>
+      <input formControlName="quantidade" type="number" placeholder="Digite a quantidade aqui" />
+    </div>
+
+    <div>
+      <input type="submit" value="Realizar cadastro" [disabled]="produto.invalid" />
+    </div>
+
+  </form>
+
+  <!-- Consulta dos produtos -->
+  <table>
+      <thead>
+        <tr>
+          <th>Nome do produtos</th>
+          <th>Preço</th>
+          <th>Quantidade</th>
+          <th>Data de cadastro</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        @for(item of produtos(); track item) {
+          <tr>
+            <td> {{ item.nome }} </td>
+            <td> {{ item.preco }} </td>
+            <td> {{ item.quantidade }} </td>
+            <td> {{ item.dataHoraCadastro }} </td>
+            <td></td>
+          </tr>
+        }
+
+      </tbody>
+  </table>
+
+</div><div>
+
+  <h2>Sistema de controle de produtos</h2>
+  <p>Preencha o formulário para incluir um produto:</p>
+
+  <form [formGroup]="produto" (ngSubmit)="cadastrarProduto()">
+
+    <!-- exibir as mensagens de sucesso ou de erro -->
+    @if(mensagemSucesso()) {
+    <div class="msgSucesso">
+      {{ mensagemSucesso() }}
+    </div>
+    }
+    @else if(mensagemErro()) {
+    <div class="msgErro">
+      {{ mensagemErro() }}
+    </div>
+    }
+
+    <div>
+      <label>Nome do produto:</label>
+      <input formControlName="nome" type="text" placeholder="Digite o nome aqui" />
+    </div>
+
+    <div>
+      <label>Preço do produto:</label>
+      <input formControlName="preco" type="text" placeholder="Digite o preço aqui" />
+    </div>
+
+    <div>
+      <label>Quantidade:</label>
+      <input formControlName="quantidade" type="number" placeholder="Digite a quantidade aqui" />
+    </div>
+
+    <div>
+      <input type="submit" value="Realizar cadastro" [disabled]="produto.invalid" />
+    </div>
+
+  </form>
+
+  <!-- Consulta dos produtos -->
+  <table>
+      <thead>
+        <tr>
+          <th>Nome do produto</th>
+          <th>Preço</th>
+          <th>Quantidade</th>
+          <th>Data de cadastro</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        @for(item of produtos(); track item) {
+          <tr>
+            <td> {{ item.nome }} </td>
+            <td> {{ item.preco }} </td>
+            <td> {{ item.quantidade }} </td>
+            <td> {{ item.dataHoraCadastro }} </td>
+            <td></td>
+          </tr>
+        }
+
+      </tbody>
+  </table>
+
+</div>
